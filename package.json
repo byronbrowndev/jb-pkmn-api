@@ -1,0 +1,24 @@
+{
+  "name": "jb-pkmn-api",
+  "version": "1.0.0",
+  "description": "a bridge to pokeapi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byronbrowndev/jb-pkmn-api.git"
+  },
+  "author": "byron and julius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byronbrowndev/jb-pkmn-api/issues"
+  },
+  "homepage": "https://github.com/byronbrowndev/jb-pkmn-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
