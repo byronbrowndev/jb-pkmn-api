@@ -34,7 +34,7 @@ app.get('*', async function(req, res) {
         // const url = 'https://pokeapi.co/api/v2' + params;
         // console.log('-------' + url + '--------');
         // const pkmnResp = await fetch(url);
-        console.log(pkmnResp);
+        console.log(path);
 
         res.json(path);
     } catch {
