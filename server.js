@@ -26,8 +26,10 @@ app.get('/', function(req, res) {
     res.send('<h1>welcome to the julius pkmn bridge!</h1>');
 });
 
-app.get('*', function(req, res) {
-    res.json('pokemon data');
+app.get('*', async function(req, res) {
+    // https://pokeapi.co/api/v2/pokemon/9
+    const params = req.params;
+    res.json(params);
 });
   
 // Starts the server to begin listening
