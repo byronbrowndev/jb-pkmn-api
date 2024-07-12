@@ -29,12 +29,12 @@ app.get('/', function(req, res) {
 app.get('*', async function(req, res) {
     // https://pokeapi.co/api/v2/pokemon/9
     try {
-        const params = req.params[0];
         const path = req.path;
-        // const url = 'https://pokeapi.co/api/v2' + params;
-        // console.log('-------' + url + '--------');
-        // const pkmnResp = await fetch(url);
-        console.log(path);
+        const url = 'https://pokeapi.co/api/v2' + path;
+        console.log('-------' + url + '--------');
+        const pkmnHttpInfo = await fetch(url);
+        const pkmnResponse = await pkmnHttpInfo.json()
+        console.log(pkmnResponse);
 
         res.json(path);
     } catch {
