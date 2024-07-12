@@ -34,9 +34,8 @@ app.get('*', async function(req, res) {
         console.log('-------' + url + '--------');
         const pkmnHttpInfo = await fetch(url);
         const pkmnResponse = await pkmnHttpInfo.json()
-        console.log(pkmnResponse);
 
-        res.json(path);
+        res.json(pkmnResponse);
     } catch {
         console.error('bad thing happened')
         res.status('500').send('err try again in 10 secs');
