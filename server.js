@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
 
 app.get('*', async function(req, res) {
     // https://pokeapi.co/api/v2/pokemon/9
-    const params = req.params;
+    const params = req.params[0];
     res.json(params);
 });
   
