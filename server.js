@@ -28,8 +28,15 @@ app.get('/', function(req, res) {
 
 app.get('*', async function(req, res) {
     // https://pokeapi.co/api/v2/pokemon/9
-    const params = req.params[0];
-    res.json(params);
+    try {
+        const params = req.params[0];
+
+        const pkmnResp = await fetch('https://pokeapi.co/api/v2' + params);
+
+        res.json(pkmnResp);
+    } catch {
+        res.status('500').send('err try again in 10 secs');
+    }
 });
   
 // Starts the server to begin listening
