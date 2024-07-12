@@ -30,11 +30,14 @@ app.get('*', async function(req, res) {
     // https://pokeapi.co/api/v2/pokemon/9
     try {
         const params = req.params[0];
-
-        const pkmnResp = await fetch('https://pokeapi.co/api/v2' + params);
+        const url = 'https://pokeapi.co/api/v2' + params;
+        console.log('-------' + url + '--------');
+        const pkmnResp = await fetch(url);
+        console.log(pkmnResp);
 
         res.json(pkmnResp);
     } catch {
+        console.error('bad thing happened')
         res.status('500').send('err try again in 10 secs');
     }
 });
